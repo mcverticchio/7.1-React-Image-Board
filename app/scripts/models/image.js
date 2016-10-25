@@ -1,15 +1,19 @@
 var Backbone = require('backbone');
 
-var Images = Backbone.Model.extend({
-
+var Image = Backbone.Model.extend({
+  defaults: {
+    imageUrl: '',
+    caption: ''
+  },
+  idAttribute: '_id'
 });
 
-var ImagesCollection = Backbone.Collection.extend({
-  model: Images,
+var ImageCollection = Backbone.Collection.extend({
+  model: Image,
   url: 'https://tiny-lasagna-server.herokuapp.com/collections/carolinesimages'
 });
 
 module.exports = {
-  Images: Images,
-  ImagesCollection: ImagesCollection
+  Image: Image,
+  ImageCollection: ImageCollection
 };
