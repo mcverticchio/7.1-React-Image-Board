@@ -41,7 +41,7 @@ var FormComponent = React.createClass({
 
   render: function(){
     return (
-      <form onSubmit={this.handleSubmit} className="well" action="index.html" method="post">
+      <form onSubmit={this.handleSubmit} className="formArea" action="index.html" method="post">
           <div className="form-group">
             <label htmlFor="url">Image URL</label>
             <input onChange={this.handleUrlChange} type="text" className="form-control" id="url" value={this.state.url} placeholder="Image URL" />
@@ -50,7 +50,7 @@ var FormComponent = React.createClass({
             <label htmlFor="caption">Image Caption</label>
             <textarea onChange={this.handleCaptionChange} className="form-control" id="caption" value={this.state.caption} rows="3" />
           </div>
-          <button type="submit" className="btn btn-default">{this.props.model ? 'Edit' : 'Add'} Image</button>
+          <button type="submit" className="btn btn-default topButton">{this.props.model ? 'Edit' : 'Add'} Image</button>
         </form>
       );
     }

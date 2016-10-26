@@ -68,6 +68,7 @@ var AppComponent = React.createClass({
         <div>
           <header className="container-fluid main-header">
             <a className="add-image" href="#" onClick={this.handleToggleForm}><i className="glyphicon glyphicon-plus"></i></a>
+            <h1>A Day at the Iron Yard</h1>
           </header>
 
           <div className= "container">
