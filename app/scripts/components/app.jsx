@@ -21,8 +21,8 @@ var AppComponent = React.createClass({
 
     return{
       collection: imageBoard,
-      model: imageModel,
       imageToDelete: imageModel,
+      imageToEdit: false,
       showForm: false
     };
   },
@@ -31,6 +31,9 @@ var AppComponent = React.createClass({
     this.state.collection.create(imageModel);
     this.setState({collection: this.state.collection});
 
+  },
+  handleEdit: function(model){
+    this.setState({showForm: true, imageToEdit: model});
   },
   handleToggleForm: function(e){
     e.preventDefault();
@@ -42,6 +45,12 @@ var AppComponent = React.createClass({
     image.destroy();
     this.setState({collection: this.state.collection});
   },
+  editImage: function(model, data){
+    model.set(data);
+    model.save();
+
+    this.setState({imageToEdit: false, showForm: false});
+  },
     render: function(){
       var self = this;
 
@@ -51,6 +60,7 @@ var AppComponent = React.createClass({
             key={image.get("_id")}
             model={image}
             deleteImage={self.deleteImage}
+            handleEdit={self.handleEdit}
           />
         );
       });
@@ -63,7 +73,7 @@ var AppComponent = React.createClass({
           <div className= "container">
             <div className = "row">
               <div className="col-md-12">
-                {this.state.showForm ? <FormComponent model={this.state.model} addImage={this.addImage}/> : null}
+                {this.state.showForm ? <FormComponent model={this.state.imageToEdit} addImage={this.addImage} editImage={this.editImage}/> : null}
               </div>
             </div>
           <div className="row">

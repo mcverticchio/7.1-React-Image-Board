@@ -4,6 +4,9 @@ var Backbone = require('backbone');
 var $ = require('jquery');
 
 var ImageListComponent = React.createClass({
+  handleEdit: function(e){
+    this.props.handleEdit(this.props.model);
+  },
   handleDelete: function(e){
     this.props.deleteImage(this.props.model);
   },
@@ -18,7 +21,7 @@ var ImageListComponent = React.createClass({
             <div className="caption">
               <p>{imageCaption}</p>
               <p>
-                <a href="#" className="btn btn-primary" role="button">Edit</a>
+                <a onClick={this.handleEdit} href="#" className="btn btn-primary" role="button">Edit</a>
                 <a onClick={this.handleDelete} href="#" className="btn btn-default" role="button">Remove</a>
               </p>
             </div>
