@@ -59,6 +59,9 @@ i{
   // margin-left: -120px;
   padding: 50px;
   padding-bottom: 90px;
+  @media(max-width:990px){
+    width: 100vw;
+  }
 }
 .form-group {
   width: 800px;
@@ -77,6 +80,9 @@ label {
   float:right;
   width: 180px;
   font-size: 20px;
+  @media(max-width:630px){
+    margin-right:200px;
+  }
 }
 .btn-default:hover{
   background: #a366ff;
@@ -98,6 +104,18 @@ label {
   margin-top: 1px;
   color: #FFF;
   font-size: 20px;
+  @media(max-width:1200px){
+    margin-left: 130px;
+  }
+  @media(max-width:900px){
+    margin-left:400px;
+  }
+  @media(max-width:740px){
+    margin-left: 390px;
+  }
+  @media(max-width:630px){
+    margin-left:10px;
+  }
 }
 .btn-primary:hover {
   background: #a366ff;
