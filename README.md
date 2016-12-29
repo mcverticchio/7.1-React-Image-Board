@@ -2,7 +2,7 @@
 Description: 
 An image board that saves submissions to tiny lasagna server using jQuery + React.
 
-Tech: HTML/CSS/SCSS, Bootstrap, Backbone, React, jQuery
+Tech: HTML/CSS/SCSS, Bootstrap, React, jQuery
 
 ![original project image board](app/images/imageboard.png)
 
